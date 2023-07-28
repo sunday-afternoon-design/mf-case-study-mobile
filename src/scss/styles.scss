@@ -13,47 +13,67 @@ body {
 
 .slider {
     -webkit-appearance: none;
-    width: 32vw;
-    height: 1px;
+    width: 60vw;
+    height: 2px;
     border-radius: 3px;
     background-color: #ccc;
     outline: none;
-    opacity: 0.7;
+    opacity: 1;
     -webkit-transition: .2s;
     transition: opacity .2s;
     padding: 0;
     margin: 0;
     position: absolute;
-    left: 4vw;
-    margin-top: 2vh;
-}
+    // left: 4vw;
 
-.slider:hover {
-    opacity: 1;
+    margin-left: 30vw;
 }
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 3.5vw;
-    height: 2vw;
+    width:4.5vw;
+    height: 3.5vh;
     border-radius: 1.5vw;
     background: rgb(130, 130, 130);
     cursor: pointer;
 }
 
-#rangeright {
-    position: absolute;
-    margin-top: 88vh;
-    margin-left: 50vw;
-}
-
 .slider::-moz-range-thumb {
-    width: 3.5vw;
-    height: 2vw;
+    width:4.5vw;
+    height: 3.5vh;
     background: rgb(130, 130, 130);
     cursor: pointer;
 }
+
+#weightRange {
+    margin-top: 4vh;
+}
+
+#slantRange {
+    margin-top: 12vh;
+}
+
+.slidename {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    // margin-top: -.5vh;
+    font-family: 'planar';
+    color: #fff;
+    font-size: 4vw;
+    padding-left: 10vw;
+}
+
+#weightname {
+    margin-top: 2vh;
+}
+
+#slantname {
+    margin-top: 10vh;
+}
+
+
 
 #mf {
     font-family: 'planar';
@@ -61,47 +81,42 @@ body {
     margin: 0;
     width: 100vw;
     height: 46vh;
-    margin-top: 28vh;
+    margin-top: 26vh;
+    margin-bottom: 6vh;
     font-variation-settings: 'wght' 100, 'slnt' 0;
     -webkit-font-smoothing: antialiased;
 }
 
-#weightRange {
-    margin-left: 11vw;
-}
 
-#slantRange {
-    margin-left: 59vw;
-}
 
-.labels {
-    color: white;
-    font-family: 'planar';
-    font-size: 1.6vw;
-    position: absolute;
-    margin-top: -4.5vh;
-}
+// .labels {
+//     color: white;
+//     font-family: 'planar';
+//     font-size: 1.6vw;
+//     position: absolute;
+//     margin-top: -4.5vh;
+// }
 
-#weightLabela {
-    font-variation-settings: 'wght' 100;
-    margin-left: 15.2vw;
-}
+// #weightLabela {
+//     font-variation-settings: 'wght' 100;
+//     margin-left: 15.2vw;
+// }
 
-#weightLabelb {
-    font-variation-settings: 'wght' 900;
-    margin-left: 45.2vw;
-}
+// #weightLabelb {
+//     font-variation-settings: 'wght' 900;
+//     margin-left: 45.2vw;
+// }
 
-#slantLabela {
-    font-variation-settings: 'wght' 350;
-    margin-left: 63vw;
-}
+// #slantLabela {
+//     font-variation-settings: 'wght' 350;
+//     margin-left: 63vw;
+// }
 
-#slantLabelb {
-    // font-variation-settings: 'wght' 450, 'slnt' 5; 
-    font-variation-settings: 'wght' 350, 'slnt' 40;
-    margin-left: 93.5vw;
-}
+// #slantLabelb {
+//     // font-variation-settings: 'wght' 450, 'slnt' 5; 
+//     font-variation-settings: 'wght' 350, 'slnt' 40;
+//     margin-left: 93.5vw;
+// }
 
 .my-button {
     /* Set button background color, text color, and padding */
@@ -111,38 +126,45 @@ body {
     /* Add border and rounded corners for a button-like appearance */
     border: solid;
     border-width: 1px;
-    width: 15vw;
-    height: 3vw;
-    border-radius: 1.5vw;
+    width: 80vw;
+    height: 8vw;
+    border-radius: 5vw;
     // font-size: 10px;
     /* Add hover effect when mouse is over the button */
     transition: background-color 0.3s;
     font-family: 'planar';
-    font-size: 1.5vw;
-}
-
-.my-button:hover {
-    background-color: #696969;
-}
-
-#textbutton {
-    margin-top: 8vh;
-}
-
-.slidename {
-    padding: 0%;
-    margin: 0%;
+    font-size: 4vw;
     position: absolute;
-    // margin-top: -.5vh;
-    font-family: 'planar';
-    color: #fff;
-    font-size: 1.6vw;
+    // margin-top:38vh;
+    margin-left: 10vw;
 }
 
-#weightname {
-    padding-left: 6.5vw;
+#textD{
+    margin-top:36vh;
 }
 
-#slantname {
-    margin-left: 56vw;
+#textM{
+    margin-top:44vh;
+}
+
+
+
+
+
+.mybuttonblack {
+    background-color: black;
+    color: #ffffff;
+}
+
+.mybuttonwhite {
+    background-color: white;
+    color: #000;
+}
+
+#random{
+    position:absolute;
+    margin-top: 28vh;
+    // height: 8vw;
+    width: 23vw;
+    border-radius: 11.5vw;
 }

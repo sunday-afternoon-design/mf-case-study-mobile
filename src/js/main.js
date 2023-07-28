@@ -2,7 +2,7 @@ import '../scss/styles.scss'
 
 import * as bootstrap from 'bootstrap'
 
-let cursor = document.getElementById("cursor");
+
 
 let splitstr
 let strtest = "DIRECTOR"
@@ -15,17 +15,14 @@ let mousex;
 let mousey;
 
 
-
 const wInput = document.getElementById("weightRange");
 const slantInput = document.getElementById("slantRange");
 const textD = document.getElementById("textD")
-const textF = document.getElementById("textF")
 const textM = document.getElementById("textM")
 
 let time = 0
 
 function init() {
-
     splitstr = strtest.split('');
     p.innerHTML = '';
     MFspan = []
@@ -35,7 +32,6 @@ function init() {
         MFspan.push(ic)
         p.append(MFspan[i]);
     }
-    console.log(p)
     console.log(splitstr)
 }
 
@@ -45,8 +41,8 @@ const tick = () => {
 
     time += 0.005;
 
-    x = mousex;
-    y = mousey;
+    // x = mousex;
+    // y = mousey;
 
     logo();
 
@@ -55,17 +51,12 @@ const tick = () => {
 }
 tick()
 
+
+
 function logo() {
     let weightInput = 11 - wInput.value
 
-    // let weightLabel = document.getElementById("weightLabel");
-    // let weightThumb = document.querySelector("#weightRange::-webkit-slider-thumb");
-    // const weightThumbRect = weightThumb.getBoundingClientRect();
-    // const slantThumbRect = slantThumb.getBoundingClientRect();
 
-    // let slantLabel = document.getElementById("slantLabel");
-    // let slantThumb = document.querySelector("#slantRange::-webkit-slider-thumb");
-    // slantLabel.style.left = `${slantThumb.style.left}`;
 
 
     for (let i = 0; i <
@@ -89,9 +80,7 @@ function logo() {
             .childNodes[i]
             .style
             .fontVariationSettings = `'wght' ${testw}, 'slnt' ${testslant}`;
-
     }
-
 }
 
 document.addEventListener('mousemove', (e) => {
@@ -115,19 +104,42 @@ function clamp(val, min, max) {
 textD.addEventListener('click', function() {
     strtest = "DIRECTOR"
     init()
-});
-
-textF.addEventListener('click', function() {
-    strtest = "FILM PRODUCTION"
-    init()
+    textM.classList.remove('mybuttonwhite');
+    textD.classList.remove('mybuttonblack');
+    textM.classList.add('mybuttonblack');
+    textD.classList.add('mybuttonwhite')
 });
 
 textM.addEventListener('click', function() {
     strtest = "MAGNETIC FIELD"
     init()
+    textD.classList.remove('mybuttonwhite');
+    textM.classList.remove('mybuttonblack');
+    textD.classList.add('mybuttonblack');
+    textM.classList.add('mybuttonwhite')
 });
 
-let slantb = document.getElementById("slantLabelb")
-let svalue = 45
-    // slantb.style.fontVariationSettings = `'slnt' ${svalue}`;
-slantb.style.setProperty("--slant", 45);
+
+let isRandomClicked = false;
+
+const random = document.getElementById("random");
+random.addEventListener("click", function() {
+    isRandomClicked = true;
+    wInput.value = Math.random() * (8 - 3) + 3;
+    slantInput.value = Math.random() * (0.15 - 0.01) + 0.01;
+    x = Math.random() * window.innerWidth;
+    y = Math.random() * window.innerHeight/2;
+});
+
+document.addEventListener('click', function(e) {
+    if (!isRandomClicked) {
+        x = e.clientX;
+        y = e.clientY;
+    }
+    isRandomClicked = false;
+});
+
+
+document.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+}, { passive: false });
