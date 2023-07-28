@@ -68,7 +68,7 @@ function logo() {
         let xdist = posx - x;
         let ydist = y - posy;
 
-        let testleft = xdist / 40 * 45 * ydist / 40;
+        let testleft = xdist / 60 * 45 * ydist / 60;
         let testw = (
             1 - Math.abs(xdist / window.innerWidth) * weightInput + 1 - Math.abs(ydist / window.innerHeight) * weightInput
         ) * 900;
